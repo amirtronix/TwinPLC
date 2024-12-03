@@ -14,12 +14,14 @@ END_VAR
 sr_MotorSetReset(SET1:= bStartMotor,
 				 RESET:= bStopMotor,
 				 Q1 => bServoMotor);
-]]></ST>
+
+p10_ladder();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
       <LineId Id="13" Count="0" />
       <LineId Id="15" Count="1" />
+      <LineId Id="26" Count="0" />
       <LineId Id="11" Count="0" />
     </LineIds>
   </POU>
