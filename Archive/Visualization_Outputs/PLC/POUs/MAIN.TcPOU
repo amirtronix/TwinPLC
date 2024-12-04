@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="MAIN" Id="{b6d9fbc8-18d9-4327-b2b8-220f27d5c483}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bStartMotor : BOOL := FALSE;
+	bStopMotor  : BOOL := FALSE;
+	bServoMotor : BOOL;
+	sr_MotorSetReset : SR;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+sr_MotorSetReset(SET1:= bStartMotor,
+				 RESET:= bStopMotor,
+				 Q1 => bServoMotor);
+
+p10_ladder();]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
